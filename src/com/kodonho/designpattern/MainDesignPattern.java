@@ -86,16 +86,22 @@ public class MainDesignPattern {
 		
 		// 전략 CallBack은 구현체를 사용하지 않고 익명객체를 코드상에서 구현해준다.
 		if(context2.status == Soldier.ATTACKED){
-			context2.useStrategy(new Strategy(){
-				@Override
-				public void runStrategy() {
-					useSheild();
-					System.out.println("막는다~");
+			context2.useStrategy(
+				// 익명객체란?
+				// 변수가 없이 instance가 생성되는 것을 가르킨다.
+				// 아래와 같이 변수를 지정하지 않고 바로 초기화할 수 있지만
+				// 초기화된 곳 이외에서는 사용할 수 없다
+				new Strategy(){
+					@Override
+					public void runStrategy() {
+						useSheild();
+						System.out.println("막는다~");
+					}
+					private void useSheild(){
+						System.out.println("방패를 양손으로 잡고");
+					}
 				}
-				private void useSheild(){
-					System.out.println("방패를 양손으로 잡고");
-				}
-			});
+			);
 		} else if (context2.status == Soldier.NEAR){
 			context2.useStrategy(new Strategy(){
 				@Override
