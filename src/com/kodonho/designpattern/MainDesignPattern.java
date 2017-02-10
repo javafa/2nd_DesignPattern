@@ -1,13 +1,11 @@
 package com.kodonho.designpattern;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Set;
-
 import com.kodonho.designpattern.factorymethod.FactoryMethod;
 import com.kodonho.designpattern.factorymethod.Packed;
 import com.kodonho.designpattern.factorymethod.Product;
 import com.kodonho.designpattern.factorymethod.TVFactory;
+import com.kodonho.designpattern.observer.KakaoTalkServer;
+import com.kodonho.designpattern.observer.Student;
 import com.kodonho.designpattern.proxy.Bbs;
 import com.kodonho.designpattern.proxy.Proxy;
 import com.kodonho.designpattern.singleton.Multiton;
@@ -117,6 +115,19 @@ public class MainDesignPattern {
 				}
 			});
 		}
+		
+		// 8. 옵저버 사용하기
+		// 8.1 옵저버를 사용하기 위해서는 서버가 먼저 생성되어야 한다.
+		KakaoTalkServer server = new KakaoTalkServer();
+		
+		Student parkyuseok = new Student(server,"박유석");
+		Student kimjinwoo = new Student(server,"김진우");
+		Student parksaesom = new Student(server,"박새솜");
+		Student leeachim = new Student(server,"이아침");
+		Student kangnamgyu = new Student(server,"강남규");
+		Student Hongdonggu = new Student(server,"홍동구");
+		
+		parksaesom.addMessage("안녕하세요");
 	}
 
 }

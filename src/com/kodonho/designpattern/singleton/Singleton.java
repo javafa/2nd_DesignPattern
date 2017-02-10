@@ -8,7 +8,7 @@ public class Singleton {
 	// 싱글턴 자신을 담아두는 변수공간
 	private static Singleton instance = null;
 	
-	private Singleton(){  } // new 사용을 못하게 한다
+	private Singleton(){  } // new 사용을 못하게 한다 - 생성자를 private 으로 바꾼다
 
 	public static Singleton getInstance(){
 		// 1. instance 변수에 값이 있는지를 체크하고 없으면 생성한다.
