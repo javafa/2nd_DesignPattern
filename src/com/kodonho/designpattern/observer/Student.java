@@ -18,14 +18,11 @@ public class Student implements Observer {
 	List<String> messages = new ArrayList<>();
 	
 	@Override
-	public void update(String msg) {
+	public void update() {
+		// 업데이트가 일어나면 바라보고 있던 서버의 데이터를 반영한다
+		String msg = server.data;
 		messages.add(msg);
 		showMessage();
-	}
-	
-	// 타이핑을 통해 입력되는 메시지
-	public void addMessage(String msg) {
-		server.sendMessage(msg);
 	}
 	
 	public void showMessage() {

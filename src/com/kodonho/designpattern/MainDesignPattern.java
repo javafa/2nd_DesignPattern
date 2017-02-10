@@ -120,14 +120,16 @@ public class MainDesignPattern {
 		// 8.1 옵저버를 사용하기 위해서는 서버가 먼저 생성되어야 한다.
 		KakaoTalkServer server = new KakaoTalkServer();
 		
-		Student parkyuseok = new Student(server,"박유석");
-		Student kimjinwoo = new Student(server,"김진우");
-		Student parksaesom = new Student(server,"박새솜");
-		Student leeachim = new Student(server,"이아침");
-		Student kangnamgyu = new Student(server,"강남규");
-		Student Hongdonggu = new Student(server,"홍동구");
+		new Student(server,"박유석");
+		new Student(server,"김진우");
+		new Student(server,"박새솜");
+		new Student(server,"이아침");
+		new Student(server,"강남규");
+		new Student(server,"홍동구");
 		
-		parksaesom.addMessage("안녕하세요");
+		// 8.2 서버를 통해 공지를 띄운다
+		server.sendMessage("한시간만 있으면 점심시간입니다. 힘냅시다~~");
+
 	}
 
 }
