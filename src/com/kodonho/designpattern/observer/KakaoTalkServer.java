@@ -26,7 +26,7 @@ public class KakaoTalkServer {
 		}
 	}
 	
-	// 스튜던트가 사용하는 메시지 전달 함수
+	// 메시지 전달 함수
 	public void sendMessage(String msg) {
 		// 데이터 저장소에 데이터를 반영해준다
 		data = msg;
